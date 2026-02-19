@@ -1,0 +1,34 @@
+name: luma_shield
+description: "Luma Shield - High Performance DPI Bypass Tool"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.7
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  # Tasarım için modern fontlar
+  google_fonts: ^6.1.0
+  # C motorunu geçici klasöre çıkarıp çalıştırmak için
+  path_provider: ^2.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter_launcher_icons:
+  macos:
+    generate: true
+    image_path: "assets/icon/app_icon.png"
+
+flutter:
+  uses-material-design: true
+
+  # C Motorunu uygulama içine dahil ediyoruz
+  assets:
+    - assets/bin/LumaDPI

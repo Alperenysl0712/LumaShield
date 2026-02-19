@@ -1,0 +1,44 @@
+[
+{
+  "directory": "/Users/abyesil/Projects/C/LumaDPI/cmake-build-release",
+  "command": "/usr/bin/cc -I/Users/abyesil/Projects/C/LumaDPI -I/Users/abyesil/Projects/C/LumaDPI/src -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -O3 -DNDEBUG -std=gnu11 -arch arm64 -fcolor-diagnostics -o CMakeFiles/LumaDPI.dir/main.c.o -c /Users/abyesil/Projects/C/LumaDPI/main.c",
+  "file": "/Users/abyesil/Projects/C/LumaDPI/main.c",
+  "output": "/Users/abyesil/Projects/C/LumaDPI/cmake-build-release/CMakeFiles/LumaDPI.dir/main.c.o"
+},
+{
+  "directory": "/Users/abyesil/Projects/C/LumaDPI/cmake-build-release",
+  "command": "/usr/bin/cc -I/Users/abyesil/Projects/C/LumaDPI -I/Users/abyesil/Projects/C/LumaDPI/src -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -O3 -DNDEBUG -std=gnu11 -arch arm64 -fcolor-diagnostics -o CMakeFiles/LumaDPI.dir/src/core/proxy_server.c.o -c /Users/abyesil/Projects/C/LumaDPI/src/core/proxy_server.c",
+  "file": "/Users/abyesil/Projects/C/LumaDPI/src/core/proxy_server.c",
+  "output": "/Users/abyesil/Projects/C/LumaDPI/cmake-build-release/CMakeFiles/LumaDPI.dir/src/core/proxy_server.c.o"
+},
+{
+  "directory": "/Users/abyesil/Projects/C/LumaDPI/cmake-build-release",
+  "command": "/usr/bin/cc -I/Users/abyesil/Projects/C/LumaDPI -I/Users/abyesil/Projects/C/LumaDPI/src -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -O3 -DNDEBUG -std=gnu11 -arch arm64 -fcolor-diagnostics -o CMakeFiles/LumaDPI.dir/src/core/handler.c.o -c /Users/abyesil/Projects/C/LumaDPI/src/core/handler.c",
+  "file": "/Users/abyesil/Projects/C/LumaDPI/src/core/handler.c",
+  "output": "/Users/abyesil/Projects/C/LumaDPI/cmake-build-release/CMakeFiles/LumaDPI.dir/src/core/handler.c.o"
+},
+{
+  "directory": "/Users/abyesil/Projects/C/LumaDPI/cmake-build-release",
+  "command": "/usr/bin/cc -I/Users/abyesil/Projects/C/LumaDPI -I/Users/abyesil/Projects/C/LumaDPI/src -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -O3 -DNDEBUG -std=gnu11 -arch arm64 -fcolor-diagnostics -o CMakeFiles/LumaDPI.dir/src/packet/tls_parser.c.o -c /Users/abyesil/Projects/C/LumaDPI/src/packet/tls_parser.c",
+  "file": "/Users/abyesil/Projects/C/LumaDPI/src/packet/tls_parser.c",
+  "output": "/Users/abyesil/Projects/C/LumaDPI/cmake-build-release/CMakeFiles/LumaDPI.dir/src/packet/tls_parser.c.o"
+},
+{
+  "directory": "/Users/abyesil/Projects/C/LumaDPI/cmake-build-release",
+  "command": "/usr/bin/cc -I/Users/abyesil/Projects/C/LumaDPI -I/Users/abyesil/Projects/C/LumaDPI/src -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -O3 -DNDEBUG -std=gnu11 -arch arm64 -fcolor-diagnostics -o CMakeFiles/LumaDPI.dir/src/platform/macos_proxy.c.o -c /Users/abyesil/Projects/C/LumaDPI/src/platform/macos_proxy.c",
+  "file": "/Users/abyesil/Projects/C/LumaDPI/src/platform/macos_proxy.c",
+  "output": "/Users/abyesil/Projects/C/LumaDPI/cmake-build-release/CMakeFiles/LumaDPI.dir/src/platform/macos_proxy.c.o"
+},
+{
+  "directory": "/Users/abyesil/Projects/C/LumaDPI/cmake-build-release",
+  "command": "/usr/bin/cc -I/Users/abyesil/Projects/C/LumaDPI -I/Users/abyesil/Projects/C/LumaDPI/src -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -O3 -DNDEBUG -std=gnu11 -arch arm64 -fcolor-diagnostics -o CMakeFiles/LumaDPI.dir/src/utils/logger.c.o -c /Users/abyesil/Projects/C/LumaDPI/src/utils/logger.c",
+  "file": "/Users/abyesil/Projects/C/LumaDPI/src/utils/logger.c",
+  "output": "/Users/abyesil/Projects/C/LumaDPI/cmake-build-release/CMakeFiles/LumaDPI.dir/src/utils/logger.c.o"
+},
+{
+  "directory": "/Users/abyesil/Projects/C/LumaDPI/cmake-build-release",
+  "command": "/usr/bin/cc -I/Users/abyesil/Projects/C/LumaDPI -I/Users/abyesil/Projects/C/LumaDPI/src -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks -O3 -DNDEBUG -std=gnu11 -arch arm64 -fcolor-diagnostics -o CMakeFiles/LumaDPI.dir/src/utils/config.c.o -c /Users/abyesil/Projects/C/LumaDPI/src/utils/config.c",
+  "file": "/Users/abyesil/Projects/C/LumaDPI/src/utils/config.c",
+  "output": "/Users/abyesil/Projects/C/LumaDPI/cmake-build-release/CMakeFiles/LumaDPI.dir/src/utils/config.c.o"
+}
+]
