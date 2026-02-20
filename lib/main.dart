@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:luma_shield/screens/home.dart';
 
 void main() {
@@ -14,8 +15,8 @@ class MyApp extends StatelessWidget {
       title: "Luma Shield",
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: const Color(0xFF121212),
-        primaryColor: const Color(0xFF00FF94), // Neon Yeşil
+        scaffoldBackgroundColor: Colors.black,
+        textTheme: GoogleFonts.rajdhaniTextTheme(ThemeData.dark().textTheme),
       ),
       home: const Home(),
     );

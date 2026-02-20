@@ -6,12 +6,14 @@ import 'package:path_provider/path_provider.dart';
 class DpiService {
   Process? _tempProcess;
   Function(String)? onLogReceived;
+  Function(double up, double down)? onMetricsReceived;
 
   bool get isRunning => _tempProcess != null;
 
   /// ENG: Option 1: Temporary Mode - TR: Opsiyon 1: Geçici Mod
-  Future<void> startTemporary() async {
+  Future<void> startTemporary({int windowSize = 7, List<String> whiteList = const []}) async {
     try {
+      if (isRunning) return;
       // ENG: Clean up existing zombie processes to prevent port conflicts
       // TR: Port çakışmasını önlemek için varsa eski zombi süreçleri temizle
       _log("🧹 Port kontrol ediliyor...");
@@ -24,12 +26,44 @@ class DpiService {
 
       final executablePath = await _prepareBinary("LumaDPI_Temp");
 
+      String whiteListArg = whiteList.join(',');
+
       _log("🚀 Gecici Motor Baslatiliyor...");
-      _tempProcess = await Process.start(executablePath, []);
+
+      _tempProcess = await Process.start(
+        executablePath,
+        ['--window', windowSize.toString(), '--whitelist', whiteListArg]
+      );
+
+      _log("🔄 Tünel anında aktif edildi (Modem DNS'i kullanılıyor).");
 
       // ENG: Listen to stdout and stderr streams
       // TR: Akışları (stdout/stderr) dinle ve logla
-      _tempProcess!.stdout.transform(utf8.decoder).listen((data) => _log(data.trim()));
+      _tempProcess?.stdout.transform(utf8.decoder).listen((data) {
+        final lines = data.split('\n');
+        for (var line in lines) {
+          String cleanLine = line.trim();
+          if (cleanLine.isEmpty) continue;
+
+          if (cleanLine.startsWith("[METRICS]")) {
+            // Örnek: [METRICS] UP:12 DOWN:45
+            try {
+              final parts = cleanLine.split(' ');
+              final upPart = parts[1].split(':')[1];
+              final downPart = parts[2].split(':')[1];
+
+              onMetricsReceived?.call(
+                  double.parse(upPart),
+                  double.parse(downPart)
+              );
+            } catch (e) {
+              print("Metrik okuma hatası: $e");
+            }
+          } else {
+            onLogReceived?.call(cleanLine);
+          }
+        }
+      });
       _tempProcess!.stderr.transform(utf8.decoder).listen((data) {
         if (data.contains("busy")) {
           _log("⚠️ Port hala mesgul, tekrar deneniyor...");
@@ -131,6 +165,14 @@ class DpiService {
     // TR: macOS Wi-Fi proxy ayarlarını KAPALI konumuna getir
     await Process.run('networksetup', ['-setwebproxystate', 'Wi-Fi', 'off']);
     await Process.run('networksetup', ['-setsecurewebproxystate', 'Wi-Fi', 'off']);
+  }
+
+  Future<void> _enableSecureDNS() async{
+    await Process.run('networksetup', ['-setdnsservers', 'Wi-Fi', '1.1.1.1', '1.0.0.1']);
+  }
+
+  Future<void> _restDNS() async{
+    await Process.run('networksetup', ['-setdnsservers', 'Wi-Fi', 'Empty']);
   }
 
   Future<String> _prepareBinary(String name) async {

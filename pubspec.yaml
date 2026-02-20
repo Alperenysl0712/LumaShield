@@ -1,7 +1,7 @@
 name: luma_shield
 description: "Luma Shield - High Performance DPI Bypass Tool"
 publish_to: 'none'
-version: 1.0.0+1
+version: 2.0.0+1
 
 environment:
   sdk: ^3.10.7
@@ -14,6 +14,8 @@ dependencies:
   google_fonts: ^6.1.0
   # C motorunu geçici klasöre çıkarıp çalıştırmak için
   path_provider: ^2.1.2
+
+  fl_chart: ^1.1.1
 
 dev_dependencies:
   flutter_test:
